@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waves</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+    <style>
+    
+        body{
+            height: 100vh;
+            max-width: calc(100vw - 20px);
+        }
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            
+            
+            
+        }
+        .test{
+            height: 100vh;
+            width: 100vw;
+            background-color: transparent;
+            transition: 0.8s;
+            
+            
+            
+        }
+        video{
+            
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: 0.8s;
+            opacity: 211%;
+           
+            
+            
+        }
+        .box{
+            position: absolute;
+            background-color: white;
+            height: 100vh;
+            max-width: 180px;
+            margin: 0;
+            right: 0;
+            top: 0;
+            transition: 0s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            
+            
+        }
+        .box.active{
+            transition: .8s;
+            width: 0;
+            
+            
+        }
+        button{
+            position: absolute;
+            top: 40px;
+            right: 150px;
+            height: 22px;
+            padding: .4px;
+            
+        }
+        
+        img{
+            position: absolute;
+            top: 40px;
+            right: 150px;
+            cursor: pointer;
+            background-color: transparent;
+            filter: invert();
+            
+        }
+        .head{
+            
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            padding: 40px;
+            top: 0;
+            
+            left: 0;
+            height: 80vh;
+            width: 40vw;
+            margin-bottom: 40px;
+            justify-content: center;
+            color: white;
+            
+        }
+        
+        h1{
+            max-width: 250px;
+            padding: 0;
+            margin-bottom: 20px;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 400;
+            font-size: 38px;
+            letter-spacing: 4px;
+            font-stretch: expanded;
+            color: white;
+        }
+        h2{
+            max-width: 520px;
+            letter-spacing: 8.5px;
+            line-height: 35px;
+        }
+        
+        .box h2{
+            
+            top: 145px;
+            position: relative;
+            left: 5px;
+            
+        }
+        
+        .box a{
+            
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            left: 0px;
+            top: 0px;
+            z-index: 13;
+            color: white;
+            margin: 15px;
+            display: block;
+            transition: 1.8s;
+        }
+       
+        .box{
+            width: 14vw;
+            background-color: white;
+            background: rgba(0,0,0,.1);
+            
+        }
+        .box a{
+           display: block;
+            transition: 0.8s;
+            font-size: 12px;
+            font-weight: 800;
+            font-family: 'Source Code Pro', monospace;
+            letter-spacing: 1.5px;
+            
+            
+            
+               
+            
+        }
+        
+        .box a:hover{
+            
+            background-color: black;
+            color: white;
+            padding: 2px;
+            transition: 0.5s;
+        }
+        
+        
+       
+       
+        
+        .overlay{
+            top: 0;
+            left:0;
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            background: rgba(11,10,10,.55);
+            opacity: 1250%;
+        }
+        .box.active{
+            width: 0px;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+  
+  
+      <div class="overlay"></div>
+   <div class="box">
+     
+     <a href="">Technology</a>     
+     <a href="">Customers</a>
+     <a href="">Careers</a>
+     <a href="">Contact</a>
+      
+      
+        
+   </div>
+   <div class="test">
+       
+       <video src="pexels-nothing-ahead-10505868.mp4" muted loop autoplay></video>
+       
+   </div>
+   
+   <img src="bx-menu%20(1).svg">
+   
+   <div class="head">
+       
+       <h1>Welcome To Our Designing Center</h1>
+       <h2>"Life is a beautiful journey that is meant to be embraced to the fullest every day. However, that doesn’t mean you always wake up ready to seize the day!"</h2>
+       
+       
+   </div>
+   
+   <script>
+    
+    
+    
+    let boxe=document.querySelector('.box');
+    let image=document.querySelector('img');
+    let linez=document.querySelector('.line');
+    let art=document.querySelectorAll('a');
+       
+    image.addEventListener('click',function(){
+        
+       
+    
+    if(!boxe.classList.contains('active'))
+        {
+            
+           hide();
+            
+        }
+        else{
+            show();
+        }
+            
+            
+            
+            
+            
+            
+            
+    }   );
+       
+    
+       function hide(){
+           
+           boxe.classList.add('active');
+           for(i=0;i<art.length;i++)
+               {
+                   art[i].style.display="none";
+               }
+           
+       }
+        
+       
+       function show()
+       {
+           
+           boxe.classList.remove('active');
+           for(i=0;i<art.length;i++)
+               {
+                   art[i].style.display="inline-flex";
+               }
+           
+           
+       }
+       
+       
+       
+        
+                           
+    
+    
+       
+        
+        
+        
+        
+   
+       
+        
+       
+    
+    
+    
+    
+    
+    
+    </script>
+   
+    
+</body>
+</html>
